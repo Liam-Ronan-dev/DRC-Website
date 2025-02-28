@@ -1,0 +1,18 @@
+---
+import '@fontsource/rufina';
+
+interface LinkProps {
+  text: string;
+  target: string;
+}
+
+const { text, target } = Astro.props;
+---
+
+<a class="text-xl uppercase" href={target}>{text}</a>
+
+<style>
+  a {
+    font-family: 'rufina', sans-serif;
+  }
+</style>

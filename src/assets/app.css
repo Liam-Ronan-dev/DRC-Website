@@ -1,2 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
+
+
+@theme {
+  --button-blue-500: oklch(56.04% 0.1167 257.39);
+  --button-border-color: oklch(64.86% 0.0521 71.79);
+}

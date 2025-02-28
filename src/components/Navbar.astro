@@ -1,0 +1,20 @@
+---
+import DRCLogo from '../../src/images/DRCLogo.svg';
+import Button from './Button.astro';
+import Link from './Link.astro';
+---
+
+<nav class="bg-black backdrop-blur-md">
+  <div class="flex justify-evenly gap-5">
+    <a href="#"> <DRCLogo /></a>
+    <div class="mt-16 flex gap-12">
+      <Link text="About" target="#" />
+      <Link text="Services" target="#" />
+      <Link text="Projects" target="#" />
+      <Link text="Contact" target="#" />
+    </div>
+    <div class="mt-16">
+      <Button title="Call Now" href="tel:+0861961315" hasBackground={true} />
+    </div>
+  </div>
+</nav>
