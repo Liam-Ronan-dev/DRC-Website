@@ -1,20 +1,45 @@
 ---
 import DRCLogo from '../../src/images/DRCLogo.svg';
-import Button from './Button.astro';
 import Link from './Link.astro';
 ---
 
-<nav class="bg-black backdrop-blur-md">
-  <div class="flex justify-evenly gap-5">
-    <a href="#"> <DRCLogo /></a>
-    <div class="mt-16 flex gap-12">
-      <Link text="About" target="#" />
-      <Link text="Services" target="#" />
-      <Link text="Projects" target="#" />
-      <Link text="Contact" target="#" />
+<header class="bg-black backdrop-blur-md">
+  <nav class="mx-auto flex w-[92%] items-center justify-between py-4">
+    <div>
+      <a href="#"><DRCLogo /></a>
     </div>
-    <div class="mt-16">
-      <Button title="Call Now" href="tel:+0861961315" hasBackground={true} />
+
+    <input type="checkbox" id="menu-toggle" class="peer hidden" />
+    <div
+      class="nav-links bg-opacity-95 absolute top-0 left-0 hidden h-screen w-full flex-col items-center justify-center gap-8 bg-black text-white peer-checked:flex md:static md:flex md:h-auto md:w-auto md:flex-row md:bg-transparent md:text-white"
+    >
+      <ul class="flex flex-col gap-8 md:flex-row md:items-center md:gap-[4vw]">
+        <li><Link text="About" target="#" /></li>
+        <li><Link text="Services" target="#" /></li>
+        <li><Link text="Projects" target="#" /></li>
+        <li><Link text="Contact" target="#" /></li>
+      </ul>
     </div>
-  </div>
-</nav>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="tel:+0861961315"
+        class="rounded-xl bg-[#1e67ce] p-2 px-4 text-sm font-semibold text-white md:p-3 md:px-8 md:text-xl"
+        >Call Now</a
+      >
+
+      <label
+        for="menu-toggle"
+        class="relative h-10 w-10 cursor-pointer text-4xl text-white md:hidden"
+      >
+        <ion-icon
+          name="menu-outline"
+          class="absolute inset-0 m-auto peer-checked:hidden"></ion-icon>
+
+        <ion-icon
+          name="close-outline"
+          class="absolute inset-0 m-auto hidden peer-checked:block"></ion-icon>
+      </label>
+    </div>
+  </nav>
+</header>
