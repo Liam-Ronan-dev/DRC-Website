@@ -4,17 +4,17 @@ import DRCLogo from '../images/DRCLogo.svg';
 import Link from './Link.astro'; 
 
 const navItems = [
-  { text: 'About', target: '#about' },
-  { text: 'Services', target: '#services' },
-  { text: 'Projects', target: '#projects' },
-  { text: 'Contact', target: '#contact' },
+  { text: 'About', target: '/about' },
+  { text: 'Services', target: '/services' },
+  { text: 'Projects', target: '/projects' },
+  { text: 'Contact', target: '/contact' },
 ];
 ---
 
 <header class="fixed top-0 left-0 z-50 w-full bg-black/30 backdrop-blur-md">
   <nav class="mx-auto flex w-[92%] max-w-7xl items-center justify-between">
     <!-- Logo -->
-    <a href="#">
+    <a href="/">
       <DRCLogo />
     </a>
 

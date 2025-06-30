@@ -1,53 +1,81 @@
 ---
 // Hero.astro
 import { Image } from 'astro:assets';
-import HeroImage from '../images/hero.jpg';
+
+interface Props {
+  image: ImageMetadata;
+  height?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  showButtons?: boolean;
+}
+
+const {
+  image,
+  height = 'h-[100vh]',
+  title = 'CARPENTRY & PROPERTY MAINTENANCE',
+  subtitle = 'WELCOME TO D.RONAN CARPENTRY',
+  description = 'Dedicated to quality and craftsmanship for three generations. Master carpentry, fine millwork, and historic windows. Serving Snohomish County, King County, and NW Washington.',
+  showButtons = true,
+} = Astro.props;
 ---
 
 <section class="relative z-10 w-full">
   <!-- Background image -->
   <Image
-    src={HeroImage}
+    src={image}
     alt="Hero background"
-    class="absolute inset-0 z-[-1] h-[100vh] w-full object-cover"
+    class=`absolute inset-0 z-[-1] ${height} w-full object-cover`
     quality="high"
   />
 
   <!-- Content -->
   <div
-    class="relative flex h-[100vh] flex-col items-center justify-center px-4 text-center text-white"
+    class=`relative flex ${height} flex-col items-center justify-center px-4 text-center text-white`
   >
-    <h2 class="font-[rufina] text-sm tracking-widest sm:text-base md:text-lg">
-      WELCOME TO D.RONAN CARPENTRY
-    </h2>
-
-    <div class="mt-2 w-1/4 border-t-2 border-[#A38A6C]"></div>
+    {
+      subtitle && (
+        <>
+          <h2 class="font-[rufina] text-sm tracking-widest sm:text-base md:text-lg">
+            {subtitle}
+          </h2>
+          <div class="mt-2 w-1/4 border-t-2 border-[#A38A6C]" />
+        </>
+      )
+    }
 
     <h1
       class="mt-4 font-[rufina] text-3xl leading-tight font-bold sm:text-4xl md:text-5xl"
     >
-      CARPENTRY &<br />PROPERTY MAINTENANCE
+      {title}
     </h1>
 
-    <p class="mt-4 max-w-4xl text-sm leading-relaxed sm:text-base md:text-lg">
-      Dedicated to quality and craftsmanship for three generations. Master
-      carpentry, fine millwork, and historic windows. Serving Snohomish County,
-      King County, and NW Washington.
-    </p>
+    {
+      description && (
+        <p class="mt-4 max-w-4xl text-sm leading-relaxed sm:text-base md:text-lg">
+          {description}
+        </p>
+      )
+    }
 
-    <div class="mt-6 flex gap-5">
-      <a
-        href="#contact"
-        class="text-md rounded-xl bg-[#1e67ce] px-5 py-4 font-semibold text-white sm:text-base"
-      >
-        Contact Us
-      </a>
-      <a
-        href="#services"
-        class="text-md rounded-xl border-2 border-[#A38A6C] px-5 py-4 font-semibold text-white sm:text-base"
-      >
-        Services
-      </a>
-    </div>
+    {
+      showButtons && (
+        <div class="mt-6 flex gap-5">
+          <a
+            href="#contact"
+            class="text-md rounded-xl bg-[#1e67ce] px-5 py-4 font-semibold text-white sm:text-base"
+          >
+            Contact Us
+          </a>
+          <a
+            href="#services"
+            class="text-md rounded-xl border-2 border-[#A38A6C] px-5 py-4 font-semibold text-white sm:text-base"
+          >
+            Services
+          </a>
+        </div>
+      )
+    }
   </div>
 </section>

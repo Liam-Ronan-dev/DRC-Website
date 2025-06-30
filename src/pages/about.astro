@@ -1,0 +1,92 @@
+---
+import '../assets/app.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/Hero.astro';
+import { Image } from 'astro:assets';
+
+import houseImage from '../images/house.jpg';
+import AboutImage from '../images/about.jpg';
+import DamienTwoImage from '../images/damienTwo.jpg';
+import RecentProjects from '../components/RecentProjects.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<SiteLayout title="About Us Page">
+  <Hero
+    image={AboutImage}
+    height="h-[60vh]"
+    title="ABOUT US"
+    subtitle=""
+    description=""
+    showButtons={false}
+  />
+  <section class="bg-[#60503D] py-20 text-white">
+    <div
+      class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 lg:flex-row"
+    >
+      <!-- Text content -->
+      <div class="max-w-2xl">
+        <h3 class="font-[rufina] text-3xl font-bold uppercase">
+          When you choose D.RONAN Carpentry
+        </h3>
+        <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
+        <p
+          class="mt-4 text-sm leading-relaxed font-semibold sm:text-base md:text-lg"
+        >
+          You’re choosing unrivaled creativity and passion from the best
+          handymen in the house remodeling industry
+        </p>
+        <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+          We pride ourselves in striving for greatness in every project we can
+          get our hands on. Whether it’s renovating your kitchen, or remodeling
+          your bathroom; we won’t stop at nothing until we’ve helped create your
+          dream home in real life.the house remodeling industry
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
+        <Image
+          src={houseImage}
+          alt="Damien using a nail gun on a roof"
+          class="h-auto w-full rounded shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="bg-[#1c1816] py-20 text-white">
+    <div
+      class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 lg:flex-row"
+    >
+      <!-- Text content -->
+      <div class="max-w-2xl">
+        <h3 class="font-[rufina] text-3xl font-bold uppercase">
+          The Pinnacle Of Craftsmanship At Your Service.
+        </h3>
+        <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
+        <p
+          class="mt-4 text-sm leading-relaxed font-semibold sm:text-base md:text-lg"
+        >
+          My name is Christopher Lambert. CEO Of East Austin Carpenters.
+        </p>
+        <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+          Passionate and experienced carpenter with [X years] of hands-on
+          expertise in crafting unique and functional designs. My journey in
+          carpentry began with a fascination for transforming raw materials into
+          beautiful, enduring pieces that tell a story.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
+        <Image
+          src={DamienTwoImage}
+          alt="Damien using a nail gun"
+          class="h-auto w-full rounded shadow-2xl"
+        />
+      </div>
+    </div>
+  </section>
+  <RecentProjects />
+  <CTABanner />
+</SiteLayout>
