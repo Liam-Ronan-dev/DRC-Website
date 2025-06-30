@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import andrewsStairs from '../images/andrewsStairs.jpg';
+import korysFence from '../images/korysFence.jpg';
+import rikkiHouse from '../images/rikkiHouse.jpg';
+---
+
+<section class="bg-[#60503D] py-20 text-white">
+  <div class="mx-auto w-[92%] max-w-7xl">
+    <h3 class="font-[rufina] text-3xl font-bold">
+      View our most recent projects
+    </h3>
+    <div class="mt-2 w-1/2 border-t-2 border-white font-[rufina]"></div>
+
+    <div class="mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+      <!-- Project 1 -->
+      <div>
+        <div class="w-full">
+          <a href="">
+            <Image
+              src={rikkiHouse}
+              alt="Rikki's house new radiator cover"
+              class="h-auto w-full rounded shadow-2xl"
+              quality="high"
+            />
+          </a>
+        </div>
+        <a href="">
+          <h4 class="mt-4 font-[rufina] text-2xl font-bold">Rikki’s House</h4>
+        </a>
+        <p class="mt-2 text-sm leading-relaxed sm:text-base md:text-lg">
+          This Balcony on the eastside in the popular 78702 Zip Code was a very
+          natural addition to the house. In fact the house didn’t even…
+        </p>
+      </div>
+
+      <!-- Project 2 -->
+      <div>
+        <div class="w-full">
+          <a href="">
+            <Image
+              src={korysFence}
+              alt="Kory's fence design"
+              class="h-auto w-full rounded shadow-2xl"
+              quality="high"
+            />
+          </a>
+        </div>
+        <a href="">
+          <h4 class="mt-4 font-[rufina] text-2xl font-bold">Kory’s Fence</h4>
+        </a>
+        <p class="mt-2 text-sm leading-relaxed sm:text-base md:text-lg">
+          This client was an architect which made the design process a bit
+          easier than is typical with kitchen remodel. Some notable...
+        </p>
+      </div>
+
+      <!-- Project 3 -->
+      <div>
+        <div class="w-full">
+          <a href="">
+            <Image
+              src={andrewsStairs}
+              alt="Andrew's custom stair carpentry"
+              class="h-auto w-full rounded shadow-2xl"
+              quality="high"
+            />
+          </a>
+        </div>
+        <a href="">
+          <h4 class="mt-4 font-[rufina] text-2xl font-bold">Andrew’s Stairs</h4>
+        </a>
+        <p class="mt-2 text-sm leading-relaxed sm:text-base md:text-lg">
+          This project was really a completion or refinement of what we feel was
+          the original designer's intent. Budget-conscious builders...
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

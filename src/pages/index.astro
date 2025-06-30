@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 import DamienImage from '../images/damien.jpg';
 import bedroomImage from '../images/bedroom.jpg';
 import roofImage from '../images/roof.jpg';
+import RecentProjects from '../components/RecentProjects.astro';
 ---
 
 <html lang="en">
@@ -27,7 +28,7 @@ import roofImage from '../images/roof.jpg';
     <Navbar />
     <Hero />
     <main>
-      <section class="bg-[#221D23] py-20 text-white">
+      <section class="bg-[#332c24] py-20 text-white">
         <div
           class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row"
         >
@@ -55,73 +56,70 @@ import roofImage from '../images/roof.jpg';
           </div>
 
           <!-- Image -->
-          <div class="w-full max-w-md md:max-w-lg lg:max-w-xl">
+          <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
             <Image
               src={DamienImage}
               alt="Damien using a nail gun on a roof"
-              class="h-auto w-full rounded"
+              class="h-auto w-full rounded shadow-2xl"
             />
           </div>
         </div>
 
         <div
-          class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row mt-30"
+          class="mx-auto mt-30 flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row"
         >
           <!-- Text content -->
           <div class="max-w-2xl">
             <h3 class="font-[rufina] text-3xl font-bold">
-              Remodeling Contractor in Dublin
+              Proven Track Record
             </h3>
             <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
             <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
-              East Austin Carpenters have brought together talent and creativity
-              to provide an unparalleled level of service in the home renovation
-              industry. Chosen for our innovative passion and drive, our team of
-              remodeling contractors effortlessly raises the bar each and every
-              time.
+              One of the industries top remodeling companies with a proven track
+              record of going the extra mile to ensure the satisfaction of our
+              customers. We take the time to ensure each project is done
+              correctly, never cutting corners to make a few extra bucks.
             </p>
             <div class="mt-8">
               <a
                 href="#services"
                 class="rounded-xl border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
               >
-                About Us
+                Our Services
               </a>
             </div>
           </div>
-
           <!-- Image -->
           <div class="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <Image
               src={bedroomImage}
               alt="Damien using a nail gun on a roof"
-              class="h-auto w-full rounded"
+              class="h-auto w-full rounded shadow-2xl"
             />
           </div>
         </div>
 
         <div
-          class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row mt-30"
+          class="mx-auto mt-30 flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row"
         >
           <!-- Text content -->
           <div class="max-w-2xl">
             <h3 class="font-[rufina] text-3xl font-bold">
-              Remodeling Contractor in Dublin
+              Quality Craftsmanship
             </h3>
             <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
             <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
-              East Austin Carpenters have brought together talent and creativity
-              to provide an unparalleled level of service in the home renovation
-              industry. Chosen for our innovative passion and drive, our team of
-              remodeling contractors effortlessly raises the bar each and every
-              time.
+              World-class handyman professionals is eager and passionate to help
+              craft your dream home into a reality. We cater to customers who
+              expect nothing but the best and appreciate the highest quality of
+              work.
             </p>
             <div class="mt-8">
               <a
                 href="#services"
                 class="rounded-xl border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
               >
-                About Us
+                View Projects
               </a>
             </div>
           </div>
@@ -131,11 +129,12 @@ import roofImage from '../images/roof.jpg';
             <Image
               src={roofImage}
               alt="Damien using a nail gun on a roof"
-              class="h-auto w-full rounded"
+              class="h-auto w-full rounded shadow-2xl"
             />
           </div>
         </div>
       </section>
+      <RecentProjects />
     </main>
   </body>
 </html>
