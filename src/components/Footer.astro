@@ -1,0 +1,53 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#1c1816] py-15 text-white">
+  <div
+    class="mx-auto flex w-[92%] max-w-7xl flex-col items-center justify-between gap-4 sm:flex-row"
+  >
+    <div class="text-center sm:text-left">
+      <p class="text-lg">
+        &copy; {currentYear} d.ronan carpentry | phone: <a
+          href="tel:+353861961315">(086) 196-1315</a
+        >
+      </p>
+      <a href="/privacy" class="text-sm text-blue-400 hover:underline">
+        privacy policy
+      </a>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <a
+        href="https://www.linkedin.com"
+        aria-label="LinkedIn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon
+          name="logo-linkedin"
+          class="text-3xl text-white hover:text-blue-400"></ion-icon>
+      </a>
+      <a
+        href="https://www.facebook.com"
+        aria-label="Facebook"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon
+          name="logo-facebook"
+          class="text-3xl text-white hover:text-blue-400"></ion-icon>
+      </a>
+      <a
+        href="https://www.instagram.com"
+        aria-label="Instagram"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ion-icon
+          name="logo-instagram"
+          class="text-3xl text-white hover:text-pink-400"></ion-icon>
+      </a>
+    </div>
+  </div>
+</footer>

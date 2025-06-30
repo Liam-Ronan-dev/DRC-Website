@@ -7,6 +7,8 @@ import DamienImage from '../images/damien.jpg';
 import bedroomImage from '../images/bedroom.jpg';
 import roofImage from '../images/roof.jpg';
 import RecentProjects from '../components/RecentProjects.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -28,7 +30,7 @@ import RecentProjects from '../components/RecentProjects.astro';
     <Navbar />
     <Hero />
     <main>
-      <section class="bg-[#332c24] py-20 text-white">
+      <section class="bg-[#1c1816] py-20 text-white">
         <div
           class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row"
         >
@@ -135,6 +137,8 @@ import RecentProjects from '../components/RecentProjects.astro';
         </div>
       </section>
       <RecentProjects />
+      <CTABanner />
     </main>
+    <Footer />
   </body>
 </html>
