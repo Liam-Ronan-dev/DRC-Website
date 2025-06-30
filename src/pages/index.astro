@@ -2,6 +2,10 @@
 import '../assets/app.css';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import { Image } from 'astro:assets';
+import DamienImage from '../images/damien.jpg';
+import bedroomImage from '../images/bedroom.jpg';
+import roofImage from '../images/roof.jpg';
 ---
 
 <html lang="en">
@@ -23,9 +27,113 @@ import Hero from '../components/Hero.astro';
     <Navbar />
     <Hero />
     <main>
-      <section class="bg-[#A38A6C]">
-        <div class="mx-auto max-w-6xl px-4">
-          <h1 class="text-2xl font-bold">hello world</h1>
+      <section class="bg-[#221D23] py-20 text-white">
+        <div
+          class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row"
+        >
+          <!-- Text content -->
+          <div class="max-w-2xl">
+            <h3 class="font-[rufina] text-3xl font-bold">
+              Remodeling Contractor in Dublin
+            </h3>
+            <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
+            <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+              East Austin Carpenters have brought together talent and creativity
+              to provide an unparalleled level of service in the home renovation
+              industry. Chosen for our innovative passion and drive, our team of
+              remodeling contractors effortlessly raises the bar each and every
+              time.
+            </p>
+            <div class="mt-8">
+              <a
+                href="#services"
+                class="rounded-xl border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="w-full max-w-md md:max-w-lg lg:max-w-xl">
+            <Image
+              src={DamienImage}
+              alt="Damien using a nail gun on a roof"
+              class="h-auto w-full rounded"
+            />
+          </div>
+        </div>
+
+        <div
+          class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row mt-30"
+        >
+          <!-- Text content -->
+          <div class="max-w-2xl">
+            <h3 class="font-[rufina] text-3xl font-bold">
+              Remodeling Contractor in Dublin
+            </h3>
+            <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
+            <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+              East Austin Carpenters have brought together talent and creativity
+              to provide an unparalleled level of service in the home renovation
+              industry. Chosen for our innovative passion and drive, our team of
+              remodeling contractors effortlessly raises the bar each and every
+              time.
+            </p>
+            <div class="mt-8">
+              <a
+                href="#services"
+                class="rounded-xl border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="w-full max-w-md md:max-w-lg lg:max-w-xl">
+            <Image
+              src={bedroomImage}
+              alt="Damien using a nail gun on a roof"
+              class="h-auto w-full rounded"
+            />
+          </div>
+        </div>
+
+        <div
+          class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 md:flex-row mt-30"
+        >
+          <!-- Text content -->
+          <div class="max-w-2xl">
+            <h3 class="font-[rufina] text-3xl font-bold">
+              Remodeling Contractor in Dublin
+            </h3>
+            <div class="mt-2 w-3/4 border-t-2 border-[#A38A6C]"></div>
+            <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+              East Austin Carpenters have brought together talent and creativity
+              to provide an unparalleled level of service in the home renovation
+              industry. Chosen for our innovative passion and drive, our team of
+              remodeling contractors effortlessly raises the bar each and every
+              time.
+            </p>
+            <div class="mt-8">
+              <a
+                href="#services"
+                class="rounded-xl border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
+
+          <!-- Image -->
+          <div class="w-full max-w-md md:max-w-lg lg:max-w-xl">
+            <Image
+              src={roofImage}
+              alt="Damien using a nail gun on a roof"
+              class="h-auto w-full rounded"
+            />
+          </div>
         </div>
       </section>
     </main>
