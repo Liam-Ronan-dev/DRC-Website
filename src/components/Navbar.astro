@@ -1,45 +1,81 @@
 ---
-import DRCLogo from '../../src/images/DRCLogo.svg';
-import Link from './Link.astro';
+// Navbar.astro
+import DRCLogo from '../images/DRCLogo.svg';
+import Link from './Link.astro'; // This takes `text` and `target`
+
+const navItems = [
+  { text: 'About', target: '#about' },
+  { text: 'Services', target: '#services' },
+  { text: 'Projects', target: '#projects' },
+  { text: 'Contact', target: '#contact' },
+];
 ---
 
-<header class="bg-black backdrop-blur-md">
-  <nav class="mx-auto flex w-[92%] items-center justify-between py-4">
-    <div>
-      <a href="#"><DRCLogo /></a>
-    </div>
+<header class="fixed top-0 left-0 z-50 w-full bg-black/90 backdrop-blur-md">
+  <nav class="mx-auto flex w-[92%] max-w-7xl items-center justify-between py-4">
+    <!-- Logo -->
+    <a href="#" class="z-50">
+      <DRCLogo />
+    </a>
 
-    <input type="checkbox" id="menu-toggle" class="peer hidden" />
+    <!-- Mobile toggle -->
+    <input id="menu-toggle" type="checkbox" class="peer hidden" />
+
+    <!-- Mobile & Tablet Menu (md and below) -->
     <div
-      class="nav-links bg-opacity-95 absolute top-0 left-0 hidden h-screen w-full flex-col items-center justify-center gap-8 bg-black text-white peer-checked:flex md:static md:flex md:h-auto md:w-auto md:flex-row md:bg-transparent md:text-white"
+      class="nav-links fixed inset-0 z-40 hidden h-screen w-full flex-col items-center justify-center gap-10 bg-black text-white peer-checked:flex md:peer-checked:flex lg:hidden"
     >
-      <ul class="flex flex-col gap-8 md:flex-row md:items-center md:gap-[4vw]">
-        <li><Link text="About" target="#" /></li>
-        <li><Link text="Services" target="#" /></li>
-        <li><Link text="Projects" target="#" /></li>
-        <li><Link text="Contact" target="#" /></li>
+      <ul class="flex flex-col items-center gap-8 text-2xl font-semibold">
+        {
+          navItems.map((item) => (
+            <li>
+              <Link text={item.text} target={item.target} />
+            </li>
+          ))
+        }
       </ul>
-    </div>
 
-    <div class="flex items-center gap-4">
       <a
         href="tel:+0861961315"
-        class="rounded-xl bg-[#1e67ce] p-2 px-4 text-sm font-semibold text-white md:p-3 md:px-8 md:text-xl"
-        >Call Now</a
+        class="rounded-xl bg-[#1e67ce] px-6 py-3 text-xl font-semibold text-white"
       >
-
-      <label
-        for="menu-toggle"
-        class="relative h-10 w-10 cursor-pointer text-4xl text-white md:hidden"
-      >
-        <ion-icon
-          name="menu-outline"
-          class="absolute inset-0 m-auto peer-checked:hidden"></ion-icon>
-
-        <ion-icon
-          name="close-outline"
-          class="absolute inset-0 m-auto hidden peer-checked:block"></ion-icon>
-      </label>
+        Call Now
+      </a>
     </div>
+
+    <!-- Desktop (lg and up) -->
+    <div class="hidden w-full items-center justify-between px-4 lg:flex">
+      <ul class="mx-auto flex gap-[4vw] font-semibold text-white">
+        {
+          navItems.map((item) => (
+            <li>
+              <Link text={item.text} target={item.target} />
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href="tel:+0861961315"
+        class="rounded-xl bg-[#1e67ce] px-6 py-3 text-base font-semibold text-white"
+      >
+        Call Now
+      </a>
+    </div>
+
+    <!-- Hamburger Icon -->
+    <input id="menu-toggle" type="checkbox" class="peer hidden" />
+
+    <label
+      for="menu-toggle"
+      class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center text-white lg:hidden"
+    >
+      <ion-icon
+        name="menu-outline"
+        class="text-3xl transition peer-checked:hidden"></ion-icon>
+      <ion-icon
+        name="close-outline"
+        class="hidden text-3xl transition peer-checked:block"></ion-icon>
+    </label>
   </nav>
 </header>

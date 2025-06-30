@@ -9,10 +9,6 @@ interface LinkProps {
 const { text, target } = Astro.props;
 ---
 
-<a class="text-xl uppercase text-white hover:text-gray-500" href={target}>{text}</a>
+<a class="text-xl uppercase text-white hover:text-gray-500 font-[rufina]" href={target}>{text}</a>
 
-<style>
-  a {
-    font-family: 'rufina', sans-serif;
-  }
-</style>
+

@@ -1,0 +1,45 @@
+---
+// Hero.astro
+import { Image } from 'astro:assets';
+import HeroImage from '../images/hero.jpg';
+---
+
+<section class="relative z-10 w-full pt-24">
+  <!-- pt-24 accounts for fixed header height -->
+  <!-- Background image -->
+  <Image
+    src={HeroImage}
+    alt="Hero background"
+    class="absolute inset-0 z-[-1] h-full max-h-[80vh] w-full object-cover"
+  />
+
+  <!-- Content -->
+  <div
+    class="relative flex min-h-[70vh] flex-col items-center justify-center px-4 py-16 text-center text-white"
+  >
+    <h2 class="font-[rufina] text-lg tracking-widest">
+      WELCOME TO D.RONAN CARPENTRY
+    </h2>
+    <div class="mt-2 w-1/2 border-2 border-[#A38A6C]"></div>
+    <h1 class="mt-4 font-[rufina] text-4xl font-bold md:text-6xl">
+      CARPENTRY & PROPERTY MAINTENANCE
+    </h1>
+    <p class="mt-6 max-w-xl text-lg">
+      Dedicated to quality and craftsmanship for three generations. Master
+      carpentry, fine millwork, and historic windows. Serving Snohomish County,
+      King County, and NW Washington.
+    </p>
+    <div class="mt-8 flex gap-5">
+      <a
+        href="#contact"
+        class="rounded-xl bg-[#1e67ce] px-6 py-3 font-semibold text-white md:px-8 md:py-3 md:text-xl"
+        >Contact Us</a
+      >
+      <a
+        href="#services"
+        class="rounded-xl border-2 border-[#A38A6C] px-6 py-3 font-semibold text-white md:px-8 md:py-3 md:text-xl"
+        >Services</a
+      >
+    </div>
+  </div>
+</section>
