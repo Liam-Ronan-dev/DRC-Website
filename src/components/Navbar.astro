@@ -1,7 +1,7 @@
 ---
 // Navbar.astro
 import DRCLogo from '../images/DRCLogo.svg';
-import Link from './Link.astro'; 
+import Link from './Link.astro';
 
 const navItems = [
   { text: 'About', target: '/about' },
@@ -14,18 +14,40 @@ const navItems = [
 <header class="fixed top-0 left-0 z-50 w-full bg-black/30 backdrop-blur-md">
   <nav class="mx-auto flex w-[92%] max-w-7xl items-center justify-between">
     <!-- Logo -->
-    <a href="/">
+    <a href="/" aria-label="Go to homepage">
       <DRCLogo />
     </a>
 
-    <!-- Mobile toggle -->
+    <!-- Hamburger Toggle (Single Input) -->
     <input id="menu-toggle" type="checkbox" class="peer hidden" />
 
-    <!-- Mobile & Tablet Menu (md and below) -->
-    <div
-      class="nav-links fixed inset-0 z-40 hidden h-screen w-full flex-col items-center justify-center gap-10 bg-black text-white peer-checked:flex md:peer-checked:flex lg:hidden"
+    <!-- Hamburger Icon Label -->
+    <label
+      for="menu-toggle"
+      class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center text-white lg:hidden"
+      aria-label="Toggle navigation menu"
+      tabindex="0"
+      role="button"
     >
-      <ul class="flex flex-col items-center gap-8 text-2xl font-semibold">
+      <ion-icon
+        name="menu-outline"
+        class="text-3xl transition peer-checked:hidden"></ion-icon>
+      <ion-icon
+        name="close-outline"
+        class="hidden text-3xl transition peer-checked:block"></ion-icon>
+    </label>
+
+    <!-- Mobile Menu -->
+    <div
+      class="nav-links fixed inset-0 z-40 hidden h-screen w-full flex-col items-center justify-center gap-10 bg-black text-white peer-checked:flex lg:hidden"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="mobile-menu"
+    >
+      <ul
+        id="mobile-menu"
+        class="flex flex-col items-center gap-8 text-2xl font-semibold"
+      >
         {
           navItems.map((item) => (
             <li>
@@ -37,13 +59,13 @@ const navItems = [
 
       <a
         href="tel:+353861961315"
-        class="rounded-xl bg-[#1e67ce] px-6 py-3 text-xl font-semibold text-white"
+        class="bg-[#1e67ce] px-6 py-3 text-xl font-semibold text-white"
       >
         Call Now
       </a>
     </div>
 
-    <!-- Desktop (lg and up) -->
+    <!-- Desktop Menu -->
     <div class="hidden w-full items-center justify-between px-4 lg:flex">
       <ul class="mx-auto flex gap-[4vw] font-semibold text-white">
         {
@@ -57,25 +79,10 @@ const navItems = [
 
       <a
         href="tel:+0861961315"
-        class="rounded-xl bg-[#1e67ce] px-6 py-3 text-base font-semibold text-white"
+        class="bg-[#1e67ce] px-6 py-3 text-base font-semibold text-white"
       >
         Call Now
       </a>
     </div>
-
-    <!-- Hamburger Icon -->
-    <input id="menu-toggle" type="checkbox" class="peer hidden" />
-
-    <label
-      for="menu-toggle"
-      class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center text-white lg:hidden"
-    >
-      <ion-icon
-        name="menu-outline"
-        class="text-3xl transition peer-checked:hidden"></ion-icon>
-      <ion-icon
-        name="close-outline"
-        class="hidden text-3xl transition peer-checked:block"></ion-icon>
-    </label>
   </nav>
 </header>

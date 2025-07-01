@@ -1,0 +1,129 @@
+---
+import '../assets/app.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/Hero.astro';
+import RecentProjects from '../components/RecentProjects.astro';
+import { Image } from 'astro:assets';
+import ContactImage from '../images/contact.jpg';
+import ContactTwoImage from '../images/contactTwo.jpg';
+---
+
+<SiteLayout title="Contact Us Page">
+  <Hero
+    image={ContactImage}
+    height="h-[60vh]"
+    title="CONTACT US"
+    subtitle=""
+    description=""
+    showButtons={false}
+  />
+
+  <section class="bg-[#1c1816] py-20 text-white">
+    <div
+      class="mx-auto flex w-[92%] max-w-7xl flex-col gap-10 px-4 lg:flex-row"
+    >
+      <!-- Contact Form -->
+      <div class="w-full lg:w-5xl">
+        <h3 class="font-[rufina] text-xl font-bold uppercase">
+          WE WOULD LOVE TO WORK WITH YOU
+        </h3>
+        <div class="mt-2 w-1/2 border-t-2 border-[#A38A6C] sm:w-1/4"></div>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="mt-6 flex flex-col gap-5"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold">Name</label>
+            <input
+              type="text"
+              name="name"
+              class="w-full rounded-md border border-gray-300 bg-[#181513] px-4 py-2 text-white placeholder-gray-400 focus:outline-none sm:w-3/4"
+              placeholder="Enter your name"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold">E-mail</label>
+            <input
+              type="email"
+              name="email"
+              class="w-full rounded-md border border-gray-300 bg-[#181513] px-4 py-2 text-white placeholder-gray-400 focus:outline-none sm:w-3/4"
+              placeholder="Enter your Email Address"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold">Phone</label>
+            <input
+              type="text"
+              name="phone"
+              class="w-full rounded-md border border-gray-300 bg-[#181513] px-4 py-2 text-white placeholder-gray-400 focus:outline-none sm:w-3/4"
+              placeholder="Enter Your Phone"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="mb-1 block text-sm font-semibold">Message</label>
+            <textarea
+              name="message"
+              rows="4"
+              class="w-full rounded-md border border-gray-300 bg-[#181513] px-4 py-2 text-white placeholder-gray-400 focus:outline-none sm:w-3/4"
+              placeholder="Your Message"
+              required></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="mt-4 w-fit cursor-pointer bg-[#1e67ce] px-6 py-3 font-semibold text-white transition hover:bg-blue-600"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="w-full lg:w-1/2">
+        <h3 class="font-[rufina] text-xl font-bold uppercase">Contact Info</h3>
+
+        <div class="mt-2 w-1/2 border-t-2 border-[#A38A6C] sm:w-1/4"></div>
+
+        <div class="space-y-8 py-8">
+          <div class="flex items-start gap-4">
+            <ion-icon name="call-outline" class="mt-2 text-3xl text-[#A38A6C]"
+            ></ion-icon>
+            <div>
+              <p class="text-md font-semibold">Phone</p>
+              <p class="text-md text-[#A38A6C]">(086) 196 1315</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <ion-icon name="mail-outline" class="mt-2 text-3xl text-[#A38A6C]"
+            ></ion-icon>
+            <div>
+              <p class="text-md font-semibold">E-mail</p>
+              <p class="text-md text-[#A38A6C]">dronan2013@gmail.com</p>
+            </div>
+          </div>
+
+          <Image
+            src={ContactTwoImage}
+            alt="Damien using a nail gun on a roof"
+            class="mt-6 rounded shadow-2xl"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <RecentProjects />
+</SiteLayout>

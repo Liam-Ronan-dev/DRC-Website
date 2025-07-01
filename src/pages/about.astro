@@ -59,6 +59,14 @@ import CTABanner from '../components/CTABanner.astro';
       class="mx-auto flex w-[92%] max-w-7xl flex-col-reverse items-center justify-between gap-8 px-4 lg:flex-row"
     >
       <!-- Text content -->
+      <!-- Image -->
+      <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
+        <Image
+          src={DamienTwoImage}
+          alt="Damien using a nail gun"
+          class="h-auto w-full rounded shadow-2xl"
+        />
+      </div>
       <div class="max-w-2xl">
         <h3 class="font-[rufina] text-3xl font-bold uppercase">
           The Pinnacle Of Craftsmanship At Your Service.
@@ -75,15 +83,6 @@ import CTABanner from '../components/CTABanner.astro';
           carpentry began with a fascination for transforming raw materials into
           beautiful, enduring pieces that tell a story.
         </p>
-      </div>
-
-      <!-- Image -->
-      <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
-        <Image
-          src={DamienTwoImage}
-          alt="Damien using a nail gun"
-          class="h-auto w-full rounded shadow-2xl"
-        />
       </div>
     </div>
   </section>
