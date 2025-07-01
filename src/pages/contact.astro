@@ -20,7 +20,7 @@ import ContactTwoImage from '../images/contactTwo.jpg';
 
   <section class="bg-[#1c1816] py-20 text-white">
     <div
-      class="mx-auto flex w-[92%] max-w-7xl flex-col gap-10 px-4 lg:flex-row"
+      class="mx-auto flex max-w-7xl flex-col gap-10 px-4 lg:flex-row"
     >
       <!-- Contact Form -->
       <div class="w-full lg:w-5xl">
@@ -34,6 +34,7 @@ import ContactTwoImage from '../images/contactTwo.jpg';
           data-netlify="true"
           netlify-honeypot="bot-field"
           class="mt-6 flex flex-col gap-5"
+          action="/thankYou"
         >
           <input type="hidden" name="form-name" value="contact" />
           <input type="hidden" name="bot-field" />
@@ -118,7 +119,7 @@ import ContactTwoImage from '../images/contactTwo.jpg';
           <Image
             src={ContactTwoImage}
             alt="Damien using a nail gun on a roof"
-            class="mt-6 rounded shadow-2xl"
+            class="mt-6 shadow-2xl"
           />
         </div>
       </div>
