@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  image: ImageMetadata;
+  imageAltText: string;
+  iconName: string;
+  title: string;
+  description: string;
+  imageStyling?: string;
+}
+
+const {
+  image,
+  imageAltText,
+  iconName,
+  title,
+  description,
+  imageStyling = 'w-full h-110 object-cover shadow-2xl',
+} = Astro.props;
+---
+
+<section class="bg-[#1c1816] py-20 text-white">
+  <div
+    class="mx-auto flex w-[92%] max-w-6xl flex-col items-center justify-between gap-15 px-4 lg:flex-row"
+  >
+    <div class="w-full max-w-lg md:max-w-xl lg:max-w-5xl">
+      <Image src={image} alt={imageAltText} class={imageStyling} />
+    </div>
+    <div class="max-w-xl">
+      <ion-icon name={iconName} class="mt-2 mb-2 text-5xl text-[#A38A6C]"
+      ></ion-icon>
+      {
+        title && (
+          <h3 class="font-[rufina] text-3xl font-bold uppercase">{title}</h3>
+        )
+      }
+      {
+        description && (
+          <p class="mt-4 text-sm leading-relaxed sm:text-base md:text-lg">
+            {description}
+          </p>
+        )
+      }
+      <div class="mt-10">
+        <a
+          href="/contact"
+          class="border-2 border-[#A38A6C] px-8 py-3 text-sm font-semibold text-white transition duration-500 ease-in-out hover:bg-[#1e67ce] sm:text-base"
+        >
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+---
+import '../assets/app.css';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Hero from '../components/Hero.astro';
+import RecentProjects from '../components/RecentProjects.astro';
+import CTABanner from '../components/CTABanner.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import { Image } from 'astro:assets';
+
+import servicesImage from '../images/services.jpg';
+import barnImage from '../images/barn.jpg';
+import barImage from '../images/bar.jpg';
+import floorImage from '../images/floor.jpg';
+import gardenImage from '../images/garden.jpg';
+import houseTwo from '../images/houseTwo.jpg';
+
+interface Service {
+  image: ImageMetadata;
+  imageAltText: string;
+  iconName: string;
+  title: string;
+  description: string;
+  imageStyling?: string;
+}
+
+const services: Service[] = [
+  {
+    image: gardenImage,
+    imageAltText: 'finished Garden Project',
+    iconName: 'flower-outline',
+    title: 'Garden Renovations',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique egestas sodales. Donec ac pharetra sem. Nullam quis lacinia metus. Nam pretium aliquet est sit amet volutpat. Praesent tortor diam, elementum non volutpat a, auctor id urna. Vestibulum ullamcorper vulputate suscipit. Vivamus vel dolor luctus est tincidunt rutrum vestibulum quis enim. Proin auctor mi vitae sodales eleifend. In erat tortor. ',
+  },
+  {
+    image: barImage,
+    imageAltText: 'finished custom bar',
+    iconName: 'beer-outline',
+    title: 'Custom Carpentry',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique egestas sodales. Donec ac pharetra sem. Nullam quis lacinia metus. Nam pretium aliquet est sit amet volutpat. Praesent tortor diam, elementum non volutpat a, auctor id urna. Vestibulum ullamcorper vulputate suscipit. Vivamus vel dolor luctus est tincidunt rutrum vestibulum quis enim. Proin auctor mi vitae sodales eleifend. In erat tortor. ',
+  },
+  {
+    image: barnImage,
+    imageAltText: 'finished barn renovation',
+    iconName: 'construct-outline',
+    title: 'Renovations',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique egestas sodales. Donec ac pharetra sem. Nullam quis lacinia metus. Nam pretium aliquet est sit amet volutpat. Praesent tortor diam, elementum non volutpat a, auctor id urna. Vestibulum ullamcorper vulputate suscipit. Vivamus vel dolor luctus est tincidunt rutrum vestibulum quis enim. Proin auctor mi vitae sodales eleifend. In erat tortor. ',
+  },
+  {
+    image: floorImage,
+    imageAltText: 'finished flooring project',
+    iconName: 'hammer-outline',
+    title: 'Flooring',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique egestas sodales. Donec ac pharetra sem. Nullam quis lacinia metus. Nam pretium aliquet est sit amet volutpat. Praesent tortor diam, elementum non volutpat a, auctor id urna. Vestibulum ullamcorper vulputate suscipit. Vivamus vel dolor luctus est tincidunt rutrum vestibulum quis enim. Proin auctor mi vitae sodales eleifend. In erat tortor. ',
+  },
+  {
+    image: houseTwo,
+    imageAltText: 'finished house project',
+    iconName: 'home-outline',
+    title: 'House Renovations',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique egestas sodales. Donec ac pharetra sem. Nullam quis lacinia metus. Nam pretium aliquet est sit amet volutpat. Praesent tortor diam, elementum non volutpat a, auctor id urna. Vestibulum ullamcorper vulputate suscipit. Vivamus vel dolor luctus est tincidunt rutrum vestibulum quis enim. Proin auctor mi vitae sodales eleifend. In erat tortor. ',
+  },
+];
+---
+
+<SiteLayout title="Services Page">
+  <Hero
+    image={servicesImage}
+    height="h-[60vh]"
+    title="OUR SERVICES"
+    subtitle=""
+    description=""
+    showButtons={false}
+  />
+  {
+    services.map((service) => (
+      <ServiceCard
+        image={service.image}
+        imageAltText={service.imageAltText}
+        iconName={service.iconName}
+        title={service.title}
+        description={service.description}
+      />
+    ))
+  }
+  <RecentProjects />
+  <CTABanner />
+</SiteLayout>
