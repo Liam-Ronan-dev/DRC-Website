@@ -5,14 +5,14 @@ import { projects } from '../../content/projects';
 import { Image } from 'astro:assets';
 import Hero from '../../components/Hero.astro';
 
-import projectsImage from '../../images/projects.jpg'
+import projectsImage from '../../images/projects.jpg';
 import CTABanner from '../../components/CTABanner.astro';
 ---
 
 <SiteLayout title="Our Projects">
   <Hero
     image={projectsImage}
-    height="h-[60vh]"
+    height="h-[50vh]"
     title="PROJECTS"
     subtitle=""
     description=""
@@ -20,7 +20,7 @@ import CTABanner from '../../components/CTABanner.astro';
   />
   <section class="bg-[#1c1816] py-15">
     <div
-      class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:grid-cols-2 md:grid-cols-3 lg:px-8"
+      class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:grid-cols-2 md:grid-cols-3 lg:px-8"
     >
       {
         projects.map((project) => (
@@ -41,6 +41,5 @@ import CTABanner from '../../components/CTABanner.astro';
       }
     </div>
   </section>
-
   <CTABanner />
 </SiteLayout>

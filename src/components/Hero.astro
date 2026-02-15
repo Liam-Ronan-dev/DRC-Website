@@ -13,7 +13,7 @@ interface Props {
 
 const {
   image,
-  height = 'h-[100vh]',
+  height = 'h-[75vh]',
   title = 'CARPENTRY & PROPERTY MAINTENANCE',
   subtitle = 'WELCOME TO D.RONAN CARPENTRY',
   description = 'Dedicated to quality and craftsmanship for three generations. Master carpentry, fine millwork, and historic windows. Serving Snohomish County, King County, and NW Washington.',
@@ -21,12 +21,13 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative z-10 w-full">
+<section class="relative w-full">
   <!-- Background image -->
   <Image
     src={image}
+    loading='eager'
     alt="Hero background"
-    class=`absolute ${height} w-full object-cover`
+    class=`absolute ${height} brightness-40 w-full object-cover`
     quality="high"
   />
 
@@ -53,7 +54,7 @@ const {
 
     {
       description && (
-        <p class="mt-4 max-w-4xl text-sm leading-relaxed sm:text-base md:text-lg">
+        <p class="mt-4 max-w-4xl text-sm leading-relaxed sm:text-base md:text-lg lg:text-xl">
           {description}
         </p>
       )
@@ -63,10 +64,10 @@ const {
       showButtons && (
         <div class="mt-6 flex gap-8">
           <a
-            href="tel:+353861961315"
-            class="text-md bg-[#1e67ce] px-8 py-4 font-semibold text-white"
+            href="/contact"
+            class="text-md bg-[#1e67ce] hover:bg-[#134fa3] px-8 py-4 font-semibold text-white"
           >
-            Call Now
+            Contact Us
           </a>
           <a
             href="/services"
