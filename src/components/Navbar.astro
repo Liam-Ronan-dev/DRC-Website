@@ -1,5 +1,4 @@
 ---
-// Navbar.astro
 import DRCLogo from '../images/DRCLogo.svg';
 import Link from './Link.astro';
 
@@ -15,39 +14,34 @@ const navItems = [
   <nav class="mx-auto flex w-[92%] max-w-7xl items-center justify-between">
     <!-- Logo -->
     <a href="/" aria-label="Go to homepage">
-      <DRCLogo />
+      <DRCLogo class="h-auto w-50" />
     </a>
 
-    <!-- Hamburger Toggle (Single Input) -->
+    <!-- Toggle -->
     <input id="menu-toggle" type="checkbox" class="peer hidden" />
 
-    <!-- Hamburger Icon Label -->
     <label
       for="menu-toggle"
-      class="relative z-50 flex h-10 w-10 cursor-pointer items-center justify-center text-white lg:hidden"
-      aria-label="Toggle navigation menu"
-      tabindex="0"
-      role="button"
+      class="relative z-50 flex h-10 w-10 cursor-pointer flex-col items-center justify-center gap-1.5 lg:hidden
+      peer-checked:[&>span:nth-child(1)]:translate-y-2
+      peer-checked:[&>span:nth-child(1)]:rotate-45
+      peer-checked:[&>span:nth-child(2)]:opacity-0
+      peer-checked:[&>span:nth-child(3)]:-translate-y-2
+      peer-checked:[&>span:nth-child(3)]:-rotate-45"
     >
-      <ion-icon
-        name="menu-outline"
-        class="text-3xl transition peer-checked:hidden"></ion-icon>
-      <ion-icon
-        name="close-outline"
-        class="hidden text-3xl transition peer-checked:block"></ion-icon>
+      <span class="block h-0.5 w-6 bg-white transition-all duration-300"></span>
+      <span class="block h-0.5 w-6 bg-white transition-all duration-300"></span>
+      <span class="block h-0.5 w-6 bg-white transition-all duration-300"></span>
     </label>
 
     <!-- Mobile Menu -->
     <div
-      class="nav-links fixed inset-0 z-40 hidden h-screen w-full flex-col items-center justify-center gap-10 bg-black text-white peer-checked:flex lg:hidden"
+      class="pointer-events-none fixed inset-0 z-40 flex h-screen w-full translate-y-80 flex-col items-center justify-center gap-10 bg-black text-white opacity-0 transition-all duration-500 ease-in-out peer-checked:pointer-events-auto peer-checked:translate-y-0 peer-checked:opacity-100 lg:hidden"
       role="dialog"
       aria-modal="true"
       aria-labelledby="mobile-menu"
     >
-      <ul
-        id="mobile-menu"
-        class="flex flex-col items-center gap-8 text-2xl"
-      >
+      <ul id="mobile-menu" class="flex flex-col items-center gap-8 text-2xl font-semibold">
         {
           navItems.map((item) => (
             <li>
@@ -57,17 +51,14 @@ const navItems = [
         }
       </ul>
 
-      <a
-        href="tel:+353861961315"
-        class="bg-[#1e67ce] px-6 py-3 text-xl font-semibold text-white"
-      >
+      <a href="tel:+353861961315" class="bg-[#1e67ce] px-6 py-3 text-xl font-semibold text-white">
         Call Now
       </a>
     </div>
 
     <!-- Desktop Menu -->
     <div class="hidden w-full items-center justify-between lg:flex">
-      <ul class="mx-auto flex gap-[4vw] font-semibold text-white">
+      <ul class="mx-auto flex gap-[4vw] font-black text-white">
         {
           navItems.map((item) => (
             <li>
@@ -77,10 +68,7 @@ const navItems = [
         }
       </ul>
 
-      <a
-        href="tel:+0861961315"
-        class="bg-[#1e67ce] px-6 py-3 text-base font-semibold text-white"
-      >
+      <a href="tel:+0861961315" class="bg-[#1e67ce] px-6 py-3 text-base font-semibold text-white">
         Call Now
       </a>
     </div>
