@@ -41,7 +41,7 @@ const navItems = [
       aria-modal="true"
       aria-labelledby="mobile-menu"
     >
-      <ul id="mobile-menu" class="flex flex-col items-center gap-8 text-2xl font-semibold">
+      <ul id="mobile-menu" class="flex flex-col items-center gap-8 text-2xl">
         {
           navItems.map((item) => (
             <li>
@@ -58,7 +58,7 @@ const navItems = [
 
     <!-- Desktop Menu -->
     <div class="hidden w-full items-center justify-between lg:flex">
-      <ul class="mx-auto flex gap-[4vw] font-black text-white">
+      <ul class="mx-auto flex gap-[4vw] text-white">
         {
           navItems.map((item) => (
             <li>
